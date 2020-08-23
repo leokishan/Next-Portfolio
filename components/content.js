@@ -5,17 +5,68 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaTelegramPlane,
+  FaFilePdf,
 } from "react-icons/fa";
 
 const Content = (props) => {
+  const goToGit = () => {
+    window.open("https://github.com/leokishan");
+  };
+
+  const goToLinked = () => {
+    window.open("https://www.linkedin.com/in/kishan-thakkar-92b050151");
+  };
+
+  const downloadResume = () => {
+    window.open("/resume.pdf");
+  };
+
+  const handleTab = (e) => {
+    let id = e.currentTarget.dataset.scroll;
+    let element = document.getElementById(id);
+    element && element.scrollIntoView({ behavior: 'smooth' })
+  };
+
+  const submitQuery = (e) => {
+    e.preventDefault();
+    let name = e.currentTarget.username.value;
+    let email = e.currentTarget.email.value;
+    let message = e.currentTarget.message.value;
+    if (name && email && message) {
+      console.log("Call api.");
+    }
+  };
+
   return (
     <>
       <div className={classes.titleBar} id="menu-bar">
-        <div className={classes.title}>About</div>
-        <div className={classes.title}>Skills</div>
-        <div className={classes.title}>Services</div>
-        <div className={classes.title}>Work</div>
-        <div className={classes.title}>Contact</div>
+        <div
+          data-scroll="about"
+          onClick={handleTab}
+          className={classnames(classes.title, classes.hideInMobile)}
+        >
+          About
+        </div>
+        <div data-scroll="skills" onClick={handleTab} className={classes.title}>
+          Skills
+        </div>
+        <div
+          data-scroll="services"
+          onClick={handleTab}
+          className={classes.title}
+        >
+          Services
+        </div>
+        {/* <div data-scroll="about" onClick={handleTab} className={classes.title}>
+          Work
+        </div> */}
+        <div
+          data-scroll="contact"
+          onClick={handleTab}
+          className={classes.title}
+        >
+          Contact
+        </div>
       </div>
       <div className={classes.dataContainer}>
         <div className={classes.about} id="about">
@@ -146,10 +197,20 @@ const Content = (props) => {
           </p>
           <div className={classes.contactForm}>
             <div>
-              <form>
-                <input required type="text" placeholder="Name" />
-                <input required type="email" placeholder="Email" />
-                <textarea required placeholder="Message" rows={5} />
+              <form onSubmit={submitQuery}>
+                <input
+                  required
+                  name="username"
+                  type="text"
+                  placeholder="Name"
+                />
+                <input required name="email" type="email" placeholder="Email" />
+                <textarea
+                  required
+                  name="message"
+                  placeholder="Message"
+                  rows={5}
+                />
                 <button className="d-flex" type="submit">
                   SEND MESSAGE&emsp;
                   <FaTelegramPlane style={{ fontSize: "1.3rem" }} />
@@ -161,13 +222,19 @@ const Content = (props) => {
               <p>Email: thakkarkishan097@gmail.com</p>
               <p>Contact: 7048397250</p>
               <div className="d-flex">
-                <div className={classes.socialIcons}>
+                <a
+                  href="mailto:thakkarkishan097@gmail.com"
+                  className={classes.socialIcons}
+                >
                   <FaEnvelope />
+                </a>
+                <div className={classes.socialIcons} onClick={downloadResume}>
+                  <FaFilePdf />
                 </div>
-                <div className={classes.socialIcons}>
+                <div className={classes.socialIcons} onClick={goToLinked}>
                   <FaLinkedinIn />
                 </div>
-                <div className={classes.socialIcons}>
+                <div className={classes.socialIcons} onClick={goToGit}>
                   <FaGithub />
                 </div>
               </div>

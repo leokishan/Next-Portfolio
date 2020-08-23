@@ -1,8 +1,20 @@
 import classes from "../styles/index.module.css";
 import Typed from "react-typed";
-import { FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaFilePdf } from "react-icons/fa";
 
 const Banner = (props) => {
+  const goToGit = () => {
+    window.open("https://github.com/leokishan");
+  };
+
+  const goToLinked = () => {
+    window.open("https://www.linkedin.com/in/kishan-thakkar-92b050151");
+  };
+
+  const downloadResume = () => {
+		window.open('/resume.pdf');
+	};
+
   return (
     <div className={classes.banner}>
       <div className={classes.bannerOverlay} />
@@ -29,12 +41,23 @@ const Banner = (props) => {
         </p>
       </div>
       <div className={classes.iconContainer}>
-        <div className={classes.iconDiv}><FaEnvelope /></div>
-        <div className={classes.iconDiv}><FaLinkedinIn /></div>
-        <div className={classes.iconDiv}><FaGithub /></div>
+        <div className={classes.iconDiv}>
+          <a href="mailto:thakkarkishan097@gmail.com">
+            <FaEnvelope />
+          </a>
+        </div>
+        <div className={classes.iconDiv} onClick={downloadResume}>
+          <FaFilePdf />
+        </div>
+        <div className={classes.iconDiv} onClick={goToLinked}>
+          <FaLinkedinIn />
+        </div>
+        <div className={classes.iconDiv} onClick={goToGit}>
+          <FaGithub />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Banner
+export default Banner;

@@ -8,6 +8,10 @@ body{
   margin: 0;
 }
 
+a {
+  color: inherit;
+}
+
 .orange--text{
   color: #ff9901;
   font-weight: bold;
@@ -46,4 +50,10 @@ button{
   font-size: 1rem;
   margin-top: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+  html{
+    font-size: 14px;
+  }
 }

@@ -15,7 +15,8 @@
 }
 
 .dataContainer {
-  padding: 40px 5vw;
+  padding: 0 5vw;
+  padding-bottom: 20px;
   line-height: 1.7;
 }
 
@@ -24,6 +25,7 @@
 }
 
 .about {
+  padding-top: 60px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 60px;
@@ -34,7 +36,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px 60px;
-  margin-top: 30px;
+  padding-top: 60px;
 }
 
 .skills p,
@@ -78,11 +80,11 @@
 }
 
 .services {
-  margin-top: 30px;
+  padding-top: 60px;
 }
 
-.projects {
-  margin-top: 30px;
+.work {
+  padding-top: 30px;
 }
 
 .contact {
@@ -114,7 +116,7 @@
   transition: all 0.5s ease;
 }
 
-.socialIcons:hover{
+.socialIcons:hover {
   color: white;
   background-color: #ff9901;
   border-color: #ff9901;
@@ -152,4 +154,32 @@
 
 .ma0 {
   margin: 0;
+}
+
+.hideInMobile {
+}
+
+@media screen and (max-width: 576px) {
+  .hideInMobile, .selfImg {
+    display: none;
+  }
+  .skills, .serviceContainer, .contactForm, .about{
+    display: block;
+  }
+  .skills div, .serviceContainer div {
+    margin-top: 20px;
+  }
+  .title{
+    padding: 0;
+  }
+  .titleBar{
+    justify-content: space-evenly;
+    padding: 15px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .serviceContainer{
+    grid-template-columns: 1fr 1fr;
+  }
 }
