@@ -12,6 +12,7 @@
 .title {
   font-weight: bold;
   padding: 20px 40px 20px 0;
+  cursor: pointer;
 }
 
 .dataContainer {
@@ -157,6 +158,14 @@
 }
 
 .hideInMobile {
+}
+
+.success{
+  color: green;
+}
+
+.error{
+  color: red
 }
 
 @media screen and (max-width: 576px) {

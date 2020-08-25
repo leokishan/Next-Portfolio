@@ -9,6 +9,7 @@
     "postbuild": "next-on-netlify"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "next": "9.3.5",
     "next-on-netlify": "^2.3.2",

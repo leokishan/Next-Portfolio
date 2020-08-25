@@ -1,40 +1,13 @@
 import classes from "../styles/content.module.css";
 import classnames from "classnames";
-import {
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaTelegramPlane,
-  FaFilePdf,
-} from "react-icons/fa";
+import ContactForm from './form'
 
 const Content = (props) => {
-  const goToGit = () => {
-    window.open("https://github.com/leokishan");
-  };
-
-  const goToLinked = () => {
-    window.open("https://www.linkedin.com/in/kishan-thakkar-92b050151");
-  };
-
-  const downloadResume = () => {
-    window.open("/resume.pdf");
-  };
 
   const handleTab = (e) => {
     let id = e.currentTarget.dataset.scroll;
     let element = document.getElementById(id);
-    element && element.scrollIntoView({ behavior: 'smooth' })
-  };
-
-  const submitQuery = (e) => {
-    e.preventDefault();
-    let name = e.currentTarget.username.value;
-    let email = e.currentTarget.email.value;
-    let message = e.currentTarget.message.value;
-    if (name && email && message) {
-      console.log("Call api.");
-    }
+    element && element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -184,63 +157,7 @@ const Content = (props) => {
           <h1 className={classnames(classes.underlineText)}>Work</h1>
           Work
         </div> */}
-        <div className={classes.contact} id="contact">
-          <h1 className={classes.centerUnderLine}>
-            Let's develop something creative
-          </h1>
-          <p>
-            I'm a freelance developer along with working as a Fullstack
-            developer and always eager to work on new and creative ideas. I work
-            in a structural and professional manner by following best practices
-            and standards. Besides development, also interested in Data Science
-            work and looking for opportunity to deep dive into these fields.
-          </p>
-          <div className={classes.contactForm}>
-            <div>
-              <form onSubmit={submitQuery}>
-                <input
-                  required
-                  name="username"
-                  type="text"
-                  placeholder="Name"
-                />
-                <input required name="email" type="email" placeholder="Email" />
-                <textarea
-                  required
-                  name="message"
-                  placeholder="Message"
-                  rows={5}
-                />
-                <button className="d-flex" type="submit">
-                  SEND MESSAGE&emsp;
-                  <FaTelegramPlane style={{ fontSize: "1.3rem" }} />
-                </button>
-              </form>
-            </div>
-            <div>
-              <h4>Or Reach me</h4>
-              <p>Email: thakkarkishan097@gmail.com</p>
-              <p>Contact: 7048397250</p>
-              <div className="d-flex">
-                <a
-                  href="mailto:thakkarkishan097@gmail.com"
-                  className={classes.socialIcons}
-                >
-                  <FaEnvelope />
-                </a>
-                <div className={classes.socialIcons} onClick={downloadResume}>
-                  <FaFilePdf />
-                </div>
-                <div className={classes.socialIcons} onClick={goToLinked}>
-                  <FaLinkedinIn />
-                </div>
-                <div className={classes.socialIcons} onClick={goToGit}>
-                  <FaGithub />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ContactForm  />
       </div>
     </>
   );
