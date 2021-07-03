@@ -69,7 +69,7 @@ const ContactForm = props => {
           </p>
           <div className={classes.contactForm}>
             <div>
-              <form onSubmit={submitQuery}>
+              {/* <form onSubmit={submitQuery}>
                 <input
                   required
                   name="username"
@@ -96,10 +96,10 @@ const ContactForm = props => {
                   SEND MESSAGE&emsp;
                   <FaTelegramPlane style={{ fontSize: "1.3rem" }} />
                 </button>
-              </form>
+              </form> */}
             </div>
             <div>
-              <h4>Or Reach me</h4>
+              <h4>Reach me</h4>
               <p>Email: thakkarkishan097@gmail.com</p>
               <p>Contact: 7048397250</p>
               <div className="d-flex">
@@ -120,6 +120,7 @@ const ContactForm = props => {
                 </div>
               </div>
             </div>
+            <div />
           </div>
         </div>
   )
