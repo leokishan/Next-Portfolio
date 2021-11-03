@@ -101,7 +101,7 @@ const ContactForm = props => {
             <div>
               <h4>Reach me</h4>
               <p>Email: thakkarkishan097@gmail.com</p>
-              <p>Contact: 7048397250</p>
+              <p>Contact: +1 782 882 2331</p>
               <div className="d-flex">
                 <a
                   href="mailto:thakkarkishan097@gmail.com"
